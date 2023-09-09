@@ -1,13 +1,13 @@
-# 3am 👻
+# 3:49am 👻
 
-3am is a shopify starter theme. 3am comes with nothing but shopify folder structure and tailwind config.
+3:49am is a tailwind based shopify theme build using my own starter theme [3am](https://github.com/Dhanush-git/349am).
 
 ## Usage
 
 To get started clone the repo by clicking the **<> Code** button or by running the following command:
 
 ```bash
-git clone https://github.com/Dhanush-git/3am-shopify.git
+git clone https://github.com/Dhanush-git/349am.git
 ```
 
 ### Running the development server
