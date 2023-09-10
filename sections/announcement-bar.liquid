@@ -23,6 +23,9 @@
 {% schema %}
 {
   "name": "Announcement Bar",
+  "enabled_on" : {
+    "groups": ["header"]
+  },
   "settings": [
     {
       "type": "color_scheme",
@@ -55,11 +58,21 @@
   "presets": [
     {
       "name": "Announcement Bar",
+      "settings": {
+        "color_scheme": "scheme-b9a73979-cdc6-4442-b1e2-c59c1459e112",
+        "enable_marquee": true
+      },
       "blocks": [
         {
           "type": "announcement",
           "settings": {
             "announcement": "👻"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "announcement": "3:49am"
           }
         }
       ]
