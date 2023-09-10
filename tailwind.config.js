@@ -18,6 +18,15 @@ module.exports = {
         'button-text': 'var(--color-button-text)',
         'secondary-button': 'var(--color-secondary-button)',
         'secondary-button-text': 'var(--color-secondary-button-text)'
+      },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
       }
     },
   },

@@ -1,0 +1,66 @@
+<div id="annoucement-bar" aria-label="announcement-bar" class="overflow-hidden color-{{ section.settings.color_scheme.id }} py-2 b-s">
+    {% capture annoucementBarContent %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'announcement' %}
+            <p class="whitespace-nowrap px-4">{{ block.settings.announcement }}</p>
+        {% endcase %}
+      {% endfor %}
+    {% endcapture %}
+    {% if section.settings.enable_marquee %}
+      <div class="flex animate-marquee">
+        {% for x in (1..20) %}
+          {{ annoucementBarContent }}
+        {% endfor %}
+      </div>
+    {% else %}
+        <div class="page-width text-center">
+          {{ annoucementBarContent }}
+        </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_marquee",
+      "label": "Enable Marquee",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Announcement",
+      "type": "announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement",
+          "label": "Text",
+          "placeholder": "Announcement",
+          "default": "Announcement"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
